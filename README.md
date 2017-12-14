@@ -1,1 +1,1 @@
-# TrivialLeguePHP
+# TrivialLeaguePHP
