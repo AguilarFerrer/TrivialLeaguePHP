@@ -39,7 +39,6 @@ CREATE TABLE Trivial.Questions
 );
 CREATE TABLE Trivial.Histories
 (
-
 	HistoryID MEDIUMINT UNSIGNED NOT NULL AUTO_INCREMENT,
 	QuestionID MEDIUMINT UNSIGNED NOT NULL,
 	Primary KEY (HistoryID),
