@@ -18,9 +18,10 @@ CREATE TABLE Trivial.Users
     Name VARCHAR(50) NOT NULL , 
     Password MEDIUMINT NOT NULL , 
     Image VARCHAR(50) NULL , 
-    Rank VARCHAR(50) NOT NULL , 
+    Rank MEDIUMINT NOT NULL , 
     Category MEDIUMINT NOT NULL , 
-    PRIMARY KEY (UserID)
+    PRIMARY KEY (UserID),
+    FOREIGN KEY (Rank) REFERENCES Trivial.Ranks(RankID)
 );
 CREATE TABLE Trivial.Questions
 (
