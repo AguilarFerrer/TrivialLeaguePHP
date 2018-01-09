@@ -6,21 +6,20 @@ CREATE TABLE Trivial.Topics
     Image VARCHAR(50) NULL,
     PRIMARY KEY (TopicID)
 );
-CREATE TABLE Trivial.Ranks(
-    RankID MEDIUMINT UNSIGNED NOT NULL AUTO_INCREMENT,
-    Correct MEDIUMINT  NULL,
-    Points MEDIUMINT NULL,
-    PRIMARY KEY(RankID)
-);
 CREATE TABLE Trivial.Users
 ( 
     UserID MEDIUMINT UNSIGNED NOT NULL AUTO_INCREMENT, 
     Name VARCHAR(50) NOT NULL , 
     Password MEDIUMINT NOT NULL , 
-    Image VARCHAR(50) NULL , 
-    Rank VARCHAR(50) NOT NULL , 
+    Image VARCHAR(50) NULL ,  
     Category MEDIUMINT NOT NULL , 
     PRIMARY KEY (UserID)
+);
+CREATE TABLE Trivial.Ranks(
+    RankID MEDIUMINT UNSIGNED NOT NULL,
+    Correct MEDIUMINT  NULL,
+    Points MEDIUMINT NULL,
+    FOREIGN KEY (RankID) REFERENCES Trivial.Users (UserID)
 );
 CREATE TABLE Trivial.Questions
 (
