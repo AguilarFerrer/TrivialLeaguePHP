@@ -10,7 +10,7 @@ CREATE TABLE Trivial.Users
 ( 
     UserID MEDIUMINT UNSIGNED NOT NULL AUTO_INCREMENT, 
     Name VARCHAR(50) NOT NULL , 
-    Password MEDIUMINT NOT NULL , 
+    Password VARCHAR(50) NOT NULL , 
     Image VARCHAR(50) NULL ,  
     Category MEDIUMINT NOT NULL , 
     PRIMARY KEY (UserID)
