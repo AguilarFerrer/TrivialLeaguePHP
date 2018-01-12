@@ -46,7 +46,3 @@
 
     include('./includes/footer.html');
 ?>
-
-<form>
-    <input type="radio" onselect="submit">
-</form>
