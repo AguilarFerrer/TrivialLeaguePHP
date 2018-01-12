@@ -1,8 +1,8 @@
-INSERT INTO Trivial.Topics (Name, Image) VALUES ('Sports', '.\images\topics\sports.png');
-INSERT INTO Trivial.Topics (Name, Image) VALUES ('Culture', '.\images\topics\culture.png');
-INSERT INTO Trivial.Topics (Name, Image) VALUES ('Cinema', '.\images\topics\cinema.png');
-INSERT INTO Trivial.Topics (Name, Image) VALUES ('Geography', '.\images\topics\geography.png');
-INSERT INTO Trivial.Topics (Name, Image) VALUES ('Art', '.\images\topics\art.png');
+INSERT INTO Trivial.Topics (Name, Image) VALUES ('Sports', '".\images\topics\sports.png"');
+INSERT INTO Trivial.Topics (Name, Image) VALUES ('Culture', '".\images\topics\culture.png"');
+INSERT INTO Trivial.Topics (Name, Image) VALUES ('Cinema', '".\images\topics\cinema.png"');
+INSERT INTO Trivial.Topics (Name, Image) VALUES ('Geography', '".\images\topics\geography.png"');
+INSERT INTO Trivial.Topics (Name, Image) VALUES ('Art', '".\images\topics\art.png"');
 
 
 INSERT INTO Trivial.Questions(TopicQuestion, Topic,Question,AnsCorrect,AnsA,AnsB,AnsC)
