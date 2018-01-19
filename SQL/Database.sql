@@ -30,7 +30,7 @@ CREATE TABLE Trivial.Ranks(
     FOREIGN KEY (RankID) REFERENCES Trivial.Users (UserID)
     ON DELETE CASCADE,
     FOREIGN KEY (GameID) REFERENCES Trivial.Games (GameID)
-    ON DELETE SET NUL
+    ON DELETE SET NULL
 );
 CREATE TABLE Trivial.Questions
 (
