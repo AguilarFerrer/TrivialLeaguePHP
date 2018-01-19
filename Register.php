@@ -24,24 +24,23 @@
             }
             if(preg_match($patternU, $user)){
                 if(preg_match($patternP, $pass)){
-                    $q = "SELECT UserID, Name FROM Users WHERE Name='$user' AND Password=SHA1('$pass')";
+                    $q = "SELECT UserID, Name FROM Users WHERE Name='$user'";
                     $r = @mysqli_query ($dbc, $q);
                     if (!mysqli_num_rows($r) == 1) {
-                        $q = "INSERT INTO `users`(`Name`, `Password`, `Image`, `Category`) VALUES ('$user',SHA1('$pass'),'ADSSADSAD',$prof)";
+                        $q = "INSERT INTO `users`(`Name`, `Password`, `Category`) VALUES ('$user',SHA1('$pass'),$prof)";
                         @mysqli_query ($dbc, $q);
                         $txt = 'Succesful register';
-                        //TIENES QUE ASIGNARLE UN RANKING ASIGNADO A LA TABLA.
                     }
                     else{
-                        $txt = 'The Name or Password introduced are incorrect.';
+                        $txt = 'The User Already exist';
                     }
                 }
                 else{
-                   $txt = 'The password must only contain alfa-numeric characters.';
+                   $txt = 'The password must only contain alfa-numerical characters.';
                 }
             }
             else{
-                $txt = 'The user name must be at least 3 characters long and only have letters.';
+                $txt = 'The User must only contain alphabetical characters.';
             }
             if ($log == true){
                 require('./includes/redirect.php');
