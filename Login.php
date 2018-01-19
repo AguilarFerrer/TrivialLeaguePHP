@@ -47,7 +47,7 @@
     <form action="Login.php" method="POST">
         User name: <input name="User" type="text" value="<?php if(isset($_POST['User'])){ echo $_POST['User'];}?>"/><br><br>
         Password: <input name="Pass" type="password" value="<?php if(isset($_POST['Pass'])){ echo $_POST['Pass'];}?>"/><br><br>
-        <input type="submit" value="Submit"> 
+        <input type="submit" value="Submit">  <?php if(isset($_POST['User'])){ echo '<a href="edit.php?user="'. $_POST['User'] .'">Have you forgot the password?</a>';}?>
         <?php if(isset($txt)){ echo '<p class="error">' . $txt . '</p>'; } ?>
     </form>
 </div>
