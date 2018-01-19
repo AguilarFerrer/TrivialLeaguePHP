@@ -19,7 +19,7 @@
                 }
                 else{
                     require ('./includes/redirect.php');
-                    redirect('after.php?Game=' . $_GET['Game'] . 'Question='. $last);
+                    redirect('after.php?Game=' . $_GET['Game'] . '&Question='. $last);
                 }
             }
         }
