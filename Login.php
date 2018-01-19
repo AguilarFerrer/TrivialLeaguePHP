@@ -37,7 +37,7 @@
                 setcookie('ID' , $data['UserID']);
                 setcookie('Name' , $data['Name']);
                 require('./includes/redirect.php');
-                redirect('./game.php');
+                redirect('./menu.php');
             }
         }
     }  
