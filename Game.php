@@ -49,14 +49,18 @@
                 }
             }
         }
+        
+        $Quest = array($question['AnsCorrect'],$question['AnsA'],$question['AnsB'],$question['AnsC']);
+        shuffle($Quest);
+        
         mysqli_close($dbc);
         $txt = '<div id="content"><h1><img src=' . $topic['Image'] . 'height="50" width="50">' . $topic['Name'] . '</h1><br><br>' . '
             <h2>' . $question['Question'] . '</h2>
             <p><form action="Game.php?Game=' . $_GET['Game'] . '" method="POST">
-            <input type="radio" name="ans" value="' . $question['AnsCorrect'] . '">' . $question['AnsCorrect'] . '<br><br>
-            <input type="radio" name="ans" value="' . $question['AnsA'] . '">' . $question['AnsA'] . '<br><br>
-            <input type="radio" name="ans" value="' . $question['AnsB'] . '">' . $question['AnsB'] . '<br><br>
-            <input type="radio" name="ans" value="' . $question['AnsC'] . '">' . $question['AnsC'] . '<br><br>
+            <input type="radio" name="ans" value="' . $Quest[0] . '">' . $Quest[0] . '<br><br>
+            <input type="radio" name="ans" value="' . $Quest[1] . '">' . $Quest[1] . '<br><br>
+            <input type="radio" name="ans" value="' . $Quest[2] . '">' . $Quest[2] . '<br><br>
+            <input type="radio" name="ans" value="' . $Quest[3] . '">' . $Quest[3] . '<br><br>
             <input type="hidden" name="last" value="' . $last . '">
             <input type="hidden" name0"Game" value="' . $_GET['Game'] . '">
             <input type="submit" values="submit">
