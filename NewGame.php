@@ -7,7 +7,7 @@
     $count = mysqli_fetch_array ($r, MYSQLI_ASSOC);
     if ($count['Count'] == 5){
         mysqli_close($dbc);
-        redirect('Menu.php');
+        redirect('Menu.php?error=1');
     }
     else{
         $q = "INSERT INTO Games (UserID) Values ($ID)";
