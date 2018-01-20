@@ -4,13 +4,18 @@
     include('./includes/header.html');
     $txt='';
     if ($_SERVER['REQUEST_METHOD']=='POST'){
+        //Check if a password has been entered.
         if (!empty($_POST["password"])){
+            //Verify that the password and verify fields are equal.
             if ($_POST["password"]==$_POST["check"]){
+                //Check that the fields do not contain invalid characters.
                 if(preg_match('/^[0-z]{4,}$/', $_POST["password"])){
                     $q = "SELECT UserID, Password FROM Users WHERE Name='" . $_POST['User'] . "'";
                     $r = @mysqli_query ($dbc, $q);
+                    //Check if the user exists.
                     if (mysqli_num_rows($r)==1){
                         $user = mysqli_fetch_array($r, MYSQLI_ASSOC);
+                        ////Check that it is not the same password that the user already has.
                         if ($user['Password']!=sha1($_POST['password'])){
                             $password = sha1($_POST["password"]);
                             $usertest = $user["UserID"];
