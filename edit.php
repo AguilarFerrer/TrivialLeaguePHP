@@ -50,19 +50,31 @@
         }
     }
 ?>
-<div id="content">
-    <br>
-    <h1>Change your password.</h1><br>
+<div class="container">
+    <h1 class="text-center">Change your password.</h1>
+
+    
         <form action="edit.php" method="post">
-            User name: <input type="text" name="User" value="<?php if(isset($_POST["User"])){echo $_POST["User"];}
-                                                        else { echo $_GET["user"]; } ?>"><br>
-            New password: <input type="password" name="password" value=""><br>
-            Confirm password: <input type="password" name="check" value=""><br>
-            <input type="submit" name="submit" value="Change password">
+            <div class="row">
+                <div class='col-md-offset-5 col-md-2'>
+                    <label for="pwd">User name:</label>
+                    <input type="text" class="form-control" name="User" value="<?php if(isset($_POST["User"])){echo $_POST["User"];}
+                                                            else { echo $_GET["user"]; } ?>">
+                </div>
+            </div>
+            <div class="row">
+                <div class='col-md-offset-5 col-md-2'>
+                    <label for="pwd">New password:</label>
+                    <input type="password" name="password"  class="form-control"><br>
+                </div>
+            </div>
+            <div class="row">
+                <div class='col-md-offset-5 col-md-2'>
+                    <label for="pwd">Confirm password:</label>
+                    <input type="password" name="check" class="form-control"><br>
+                </div>
+            </div>
+            <input type="submit" class="btn btn-success center-block" name="submit" value="Change password">
         </form><br>
     <p class="error"><?php echo $txt; ?></p>
 </div>
-
-<?php
-    include ('./includes/footer.html');
-?>

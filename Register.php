@@ -52,13 +52,22 @@
 <div id="content">
     <br>
     <form action="register.php" method="POST">
-        User name: <input name="User" type="text" value="<?php if(isset($_POST['User'])){ echo $_POST['User'];}?>"/><br><br>
-        Password: <input name="Pass" type="password" value="<?php if(isset($_POST['Pass'])){ echo $_POST['Pass'];}?>"/><br><br>
-        <input type="checkbox" name="Professor" value="Admin">I'm a Professor<br>
-        <input type="submit" value="Register">
-        <?php if(isset($txt)){ echo '<p class="error">' . $txt . '</p>'; } ?>
+        <div class="row">
+            <div class='col-md-offset-5 col-md-2'>
+                <label for="pwd">User name:</label>
+                <input name="User" type="text" class="form-control"value="<?php if(isset($_POST['User'])){ echo $_POST['User'];}?>"/><br><br>
+            </div>
+        </div>
+        <div class="row">
+            <div class='col-md-offset-5 col-md-2'>
+                <label for="pwd">Password:</label>
+                <input  name="Pass" type="password" class="form-control"value="<?php if(isset($_POST['Pass'])){ echo $_POST['Pass'];}?>"/><br><br>
+            </div>
+        </div>
+        <input type="submit" class="btn btn-success center-block" value="Register">  
+        
+        <?php 
+            //Here will apear all error messages.
+            if(isset($txt)){ echo '<p class="text-center text-danger">' . $txt . '</p>'; } 
+        ?>
     </form>
-</div>
-<?php
-    include ('./includes/footer.html');
-?>

@@ -1,8 +1,9 @@
 <?php
     include ('./includes/headermenu.html');
 ?>
-    <div id="content">
-        <h1>Are you ready <?php if(isset($_COOKIE['Name'])){ echo $_COOKIE['Name'];} ?> ?</h1><br><br>
+    <div class="container text-center">
+        <h1 >Are you ready <?php if(isset($_COOKIE['Name'])){ echo $_COOKIE['Name'];} ?> ?</h1><br><br>
+        <p>Continue Playing</p>
         <p> <?php
                 //If the ID cookie is set, this will show the games that the user have started.
                 if(isset($_COOKIE['ID'])){
@@ -34,6 +35,4 @@
             }
             ?></p>
     </div>
-<?php
-    include ('./includes/footer.html');
-?>
+

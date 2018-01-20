@@ -28,7 +28,7 @@ th, td { padding: 15px; }
 <?php
     $q = "SELECT Name, Correct, Points FROM Ranks AS R INNER JOIN Users AS S ON S.UserID = R.RankID ORDER BY Points DESC LIMIT 20";
     $r = @mysqli_query ($dbc, $q);
-    $txt= '<p id="content"><table><tr><th>Position</th><th>Name</th><th>Points</th><th>Correct Questions</th>';
+    $txt= '<div class="center-block"><table><tr><th>Position</th><th>Name</th><th>Points</th><th>Correct Questions</th>';
     $row= mysqli_fetch_row($r);
     $int=1;
     while(!empty($row)) {
@@ -41,13 +41,20 @@ th, td { padding: 15px; }
         $row = mysqli_fetch_row($r);
         $int++;
     }
-    echo "<h1>Global Ranking</h1";
-    echo $txt . '</table></p>';
+    echo '
+            <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>Global Ranking</h1> 
+                
+        ';
+                
+    echo $txt . '</table></div>';
     
     $cookie = $_COOKIE['ID'];
     $u = "SELECT Name, Correct, Points FROM Ranks AS R INNER JOIN Users AS S ON S.UserID = R.RankID WHERE UserID=$cookie ORDER BY Points DESC LIMIT 20";
     $r = @mysqli_query ($dbc, $u);
-    $txt= '<p id="content"> <table><tr><th>Name</th><th>Points<th>Correct Questions</th>';
+    $txt= '<div class="center-block"> <table><tr><th>Name</th><th>Points<th>Correct Questions</th>';
     $row= mysqli_fetch_row($r);
     $int=1;
     while(!empty($row)) {
@@ -55,16 +62,17 @@ th, td { padding: 15px; }
         <td>' . $row[0] . '</td>
         <td>' . $row[2] . '</td>
         <td>' . $row[1] . '</td>
-    </tr><br>';
+    </tr><br>
+    
+    ';
         $row = mysqli_fetch_row($r);
         $int++;
     }
-    echo "<h1>My Records</h1";
-    echo $txt . '</table></p>';
+    echo '</div><div class="col-md-6">
+    <h1>My Records</h1>';
+    echo $txt . '</table></div>
+    </div>
+        </div>';
         
 ?>
 </aside>
-
-<?php
-    include ('./includes/footer.html');
-?>

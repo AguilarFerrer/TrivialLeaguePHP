@@ -13,12 +13,9 @@
     //The connection to the database is closed and the last question is shown to the user.
     mysqli_close($dbc);
 ?>
-    <div id="content">
+    <div class="container">
         <h1>You have answered incorrectly the last question.</h1><br>
         <h3><?php echo $question['Question']?></h3>
         <p>Correct answer is:</p>
-        <p class="error"><?php echo $question['AnsCorrect']?></p>
+        <p class="label label-danger"><?php echo $question['AnsCorrect']?></p>
     </div>
-<?php
-    include('./includes/footer.html');
-?>

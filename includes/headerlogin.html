@@ -2,17 +2,32 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<title><?php echo $page_title; ?></title>	
-	<link rel="stylesheet" href="includes/style.css" type="text/css" media="screen" />
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap/dist/css/bootstrap.min.css">
+    <script src="css/jquery.min.js"></script>
+    <script type="text/javascript" src="css/bootstrap/dist/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<div id="header">
-		<h1>Trivial Game</h1>
-	</div>
-	<div id="navigation">
-		<ul>
-			<li><a href="menu.php">Back</a></li>
-			<li><a href="Ranks.php">Ranks</a></li>
-			<li><a href="LogOut.php">Log out</a></li>
-		</ul>
-	</div>
+    <div class="row">
+        <div class="text-center">
+            <h1>Trivial Game</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="container">
+            <div class="btn-group btn-group-justified">
+                <a href="menu.php" class="btn btn-info">Back</a>
+                <a href="Ranks.php" class="btn btn-info">Ranks</a>
+                <div class="btn-group">
+                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                    MoreOptions <span class="caret"></span></button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="edit.php">Change Password</a></li>
+                        <li><a href="LogOut.php">LogOut</a></li>
+                        <li class="divider"></li>
+                        <li><a href="DeleteUser.php">Delete User</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>    
+    </div>

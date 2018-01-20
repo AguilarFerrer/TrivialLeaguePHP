@@ -5,31 +5,31 @@
 }
 
 /* general */
-a {
+.a {
 	color:#777;
 	text-decoration:none;
 }
 
-a:hover {
+.a:hover {
 	color:#333;
 	text-decoration:none;
 }
 
 /* body */
-body {
+.body {
 	background:#ffffff;
 	color:#555;
 	font:0.8em Arial, Helvetica, "bitstream vera sans", sans-serif;
 }
 
 /* header */
-#header {
+.header {
 	border-bottom:1px solid #999;
 	height:80px;
 	margin:0 auto;
 	width:65%;
 }
-#header h1 {
+.header h1 {
 	color:#888;
 	font-size:300%;
 	letter-spacing:-3px;
@@ -37,7 +37,7 @@ body {
 	padding:5px;
 	margin-bottom:-20px;
 }
-#header h2 {
+.header h2 {
 	color:#CCC;
 	font-size:200%;
 	letter-spacing:-2px;
@@ -45,7 +45,7 @@ body {
 }
 
 /* navigation */
-#navigation {
+.navigation {
 	background:#fafafa;
 	border-right:1px solid #999;
 	margin:0 auto;
@@ -53,45 +53,45 @@ body {
 	height:40px;
 	list-style:none;
 }
-#navigation li {
+.navigation li {
 	border-left:1px solid #999;
 	float:left;
 	width:33%;
 	list-style:none;
 }
-#navigation a {
+.navigation a {
 	color:#555;
 	display:block;
 	line-height:40px;
 	text-align:center;
 }
-#navigation a:hover {
+.navigation a:hover {
 	background:#e3e3e3;
 	color:#555;
 }
-#navigation .active {
+.navigation .active {
 	background:#e3e3e3;
 	color:#777;
 }
 
 /* content */
-#content {
+.content {
 	height:auto;
 	margin:0 auto;
 	padding:0 0 20px;
 	width:65%;
 }
-#content h1 {
+.content h1 {
 	border-bottom:1px dashed #999;
 	font-size:1.8em;
 	padding:20px 0 0;
 }
-#content p {
+.content p {
 	padding:20px 20px 0;
 }
 
 /* footer */
-#footer {
+.footer {
 	border-top:1px solid #999; 
 	height:50px;
 	margin:0 auto;
@@ -102,7 +102,10 @@ body {
 
 .error, .ad {
 	font-weight: bold;
-	color: #C00
+	color: #C00;
+}
+.center{
+    align-content: center;
 }
 
 input, select, .input {

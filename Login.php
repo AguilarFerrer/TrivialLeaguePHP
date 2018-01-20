@@ -53,22 +53,38 @@
 <div id="content">
     <br>
     <form action="Login.php" method="POST">
-        User name: <input name="User" type="text" value="<?php if(isset($_POST['User'])){ echo $_POST['User'];}?>"/><br><br>
-        Password: <input name="Pass" type="password" value="<?php if(isset($_POST['Pass'])){ echo $_POST['Pass'];}?>"/><br><br>
-        <input type="submit" value="Submit">  <?php
+        <div class="row">
+            <div class='col-md-offset-5 col-md-2'>
+                <label for="pwd">User name:</label>
+                <input name="User" type="text" class="form-control"value="<?php if(isset($_POST['User'])){ echo $_POST['User'];}?>"/><br><br>
+            </div>
+        </div>
+        <div class="row">
+            <div class='col-md-offset-5 col-md-2'>
+                <label for="pwd">Password:</label>
+                <input  name="Pass" type="password" class="form-control"value="<?php if(isset($_POST['Pass'])){ echo $_POST['Pass'];}?>"/><br><br>
+            </div>
+        </div>
+        <input type="submit" class="btn btn-success center-block" value="Submit">  
+        
+        <?php
             //If the user miss one time the password or user, this link will appear to change the password.
             if(isset($_POST['User'])){
-                echo '<a href="edit.php?user='. $_POST['User'] .'">Have you forgot the password?</a>';
+                echo '
+                
+                        <div class="row">
+                            <div class="col-md-offset-5 col-md-2">
+                                <a style="text-align:center" href="edit.php?user='. $_POST['User'] .'">Have you forgot the password?</a>
+                            </div>
+                        </div>
+                    '
+                ;
+                
             }
         ?>
         <?php 
             //Here will apear all error messages.
-            if(isset($txt)){ echo '<p class="error">' . $txt . '</p>'; } 
+            if(isset($txt)){ echo '<p class="text-center text-danger">' . $txt . '</p>'; } 
         ?>
     </form>
 </div>
-
-<?php
-    //The footer of the page.
-    include ('./includes/footer.html');
-?>

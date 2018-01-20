@@ -2,18 +2,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<title><?php echo $page_title; ?></title>	
-	<link rel="stylesheet" href="includes/style.css" type="text/css" media="screen" />
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap/dist/css/bootstrap.min.css">
 </head>
 <body>
-	<div id="header">
-		<h1>Trivial Game</h1>
-	</div>
-	<div id="navigation">
-		<ul>
-			<li><a href="Login.php">Login</a></li>
-			<li><a href="register.php">Register</a></li>
-			<li><a href="FAQ.php">FAQ</a></li>
-		</ul>
-	</div>
-	<div id="content"><!-- Start of the page-specific content. -->
+    <div class="row">
+        <div class="text-center">
+            <h1>Trivial Game</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="container">
+            <div class="btn-group btn-group-justified">
+                <a href="Login.php" class="btn btn-info">Login</a>
+                <a href="register.php" class="btn btn-info">Register</a>
+                <a href="FAQ.php" class="btn btn-info">FAQ</a>
+            </div>
+        </div>    
+    </div>

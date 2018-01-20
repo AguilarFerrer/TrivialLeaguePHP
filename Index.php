@@ -1,10 +1,7 @@
 <?php
     include ('./includes/header.html');
 ?>
-    <div id="content">
-        <h1>Trivial San Josep Obrer </h1><br><br>
-        <b>     This is done by students from ASIX.</b>
+    <div id="container">
+        <h1 class="text-center">Trivial San Josep Obrer </h1><br><br>
+        <p class="text-center">     This is done by students from ASIX.</p>
     </div>
-<?php
-    include ('./includes/footer.html');
-?>

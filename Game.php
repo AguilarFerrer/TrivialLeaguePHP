@@ -54,18 +54,17 @@
         shuffle($Quest);
         
         mysqli_close($dbc);
-        $txt = '<div id="content"><h1><img src=' . $topic['Image'] . 'height="50" width="50">' . $topic['Name'] . '</h1><br><br>' . '
+        $txt = '<div class="container"><h1><img src=' . $topic['Image'] . 'height="50" width="50">' . $topic['Name'] . '</h1><br><br>' . '
             <h2>' . $question['Question'] . '</h2>
             <p><form action="Game.php?Game=' . $_GET['Game'] . '" method="POST">
-            <input type="radio" name="ans" value="' . $Quest[0] . '">' . $Quest[0] . '<br><br>
-            <input type="radio" name="ans" value="' . $Quest[1] . '">' . $Quest[1] . '<br><br>
-            <input type="radio" name="ans" value="' . $Quest[2] . '">' . $Quest[2] . '<br><br>
-            <input type="radio" name="ans" value="' . $Quest[3] . '">' . $Quest[3] . '<br><br>
+            <input type="radio" name="ans" value="' . $Quest[0] . '">' . $Quest[0] . '<br>
+            <input type="radio" name="ans" value="' . $Quest[1] . '">' . $Quest[1] . '<br>
+            <input type="radio" name="ans" value="' . $Quest[2] . '">' . $Quest[2] . '<br>
+            <input type="radio" name="ans" value="' . $Quest[3] . '">' . $Quest[3] . '<br>
             <input type="hidden" name="last" value="' . $last . '">
             <input type="hidden" name0"Game" value="' . $_GET['Game'] . '">
-            <input type="submit" values="submit">
+            <input class="btn btn-success" type="submit" values="submit">
             </form></p></div>';
         echo $txt;
 
-    include('./includes/footer.html');
 ?>
