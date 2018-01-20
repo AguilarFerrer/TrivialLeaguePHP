@@ -1,14 +1,18 @@
 <style>
-h1 { text-align:center;}
+h1 { text-align:center; }
 aside {
     display:flex;
+    flex-flow:row wrap;
     align-content: center;
-    justify-content: space-around;
+    align-items: center;
+    justify-content:center;
+    padding: 2%;
+    widyh:100%;
 }   
 table {
-    margin:auto;
-    text-align: center;  
-}
+    margin-right: 10%;
+    text-align: center;    
+}  
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
@@ -24,7 +28,7 @@ th, td { padding: 15px; }
 <?php
     $q = "SELECT Name, Correct, Points FROM Ranks AS R INNER JOIN Users AS S ON S.UserID = R.RankID ORDER BY Points DESC LIMIT 20";
     $r = @mysqli_query ($dbc, $q);
-    $txt= '<p id="content"> <table><tr><th>Position</th><th>Name</th><th>Points</th><th>Correct Questions</th>';
+    $txt= '<p id="content"><table><tr><th>Position</th><th>Name</th><th>Points</th><th>Correct Questions</th>';
     $row= mysqli_fetch_row($r);
     $int=1;
     while(!empty($row)) {
