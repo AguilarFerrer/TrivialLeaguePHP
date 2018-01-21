@@ -1,7 +1,12 @@
 <?php
 
     require("./SQL/mysqli_connect.php");
-    include('./includes/header.html');
+    if (!isset($_COOKIE['Name'])){
+        include('./includes/header.html');
+    }
+    else{
+        include('./includes/headerlogin.html');
+    }
     $txt='';
     if ($_SERVER['REQUEST_METHOD']=='POST'){
         //Check if a password has been entered.
@@ -59,7 +64,8 @@
                 <div class='col-md-offset-5 col-md-2'>
                     <label for="pwd">User name:</label>
                     <input type="text" class="form-control" name="User" value="<?php if(isset($_POST["User"])){echo $_POST["User"];}
-                                                            else { echo $_GET["user"]; } ?>">
+                                                            else if (isset($_GET["user"])) { echo $_GET["user"]; }
+                                                            else{ echo $_COOKIE["Name"];}?>">
                 </div>
             </div>
             <div class="row">
@@ -76,5 +82,5 @@
             </div>
             <input type="submit" class="btn btn-success center-block" name="submit" value="Change password">
         </form><br>
-    <p class="error"><?php echo $txt; ?></p>
+    <p class="text-center text-danger"><?php echo $txt; ?></p>
 </div>
