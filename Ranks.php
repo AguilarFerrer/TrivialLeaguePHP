@@ -28,7 +28,7 @@ th, td { padding: 15px; }
 <?php
     $q = "SELECT Name, Correct, Points FROM Ranks AS R INNER JOIN Users AS S ON S.UserID = R.RankID ORDER BY Points DESC LIMIT 20";
     $r = @mysqli_query ($dbc, $q);
-    $txt= '<div class="center-block"><table><tr><th>Position</th><th>Name</th><th>Points</th><th>Correct Questions</th>';
+    $txt= '<table class="table table-hover text-centered"><tr><th>Position</th><th>Name</th><th>Points</th><th>Correct Questions</th>';
     $row= mysqli_fetch_row($r);
     $int=1;
     while(!empty($row)) {
@@ -54,7 +54,7 @@ th, td { padding: 15px; }
     $cookie = $_COOKIE['ID'];
     $u = "SELECT Name, Correct, Points FROM Ranks AS R INNER JOIN Users AS S ON S.UserID = R.RankID WHERE UserID=$cookie ORDER BY Points DESC LIMIT 20";
     $r = @mysqli_query ($dbc, $u);
-    $txt= '<div class="center-block"> <table><tr><th>Name</th><th>Points<th>Correct Questions</th>';
+    $txt= '<table class="table table-hover text-centered"><tr><th>Name</th><th>Points<th>Correct Questions</th>';
     $row= mysqli_fetch_row($r);
     $int=1;
     while(!empty($row)) {
