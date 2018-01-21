@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title><?php echo $page_title; ?></title>	
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap/dist/css/bootstrap.min.css">
+    <script src="css/jquery.min.js"></script>
+    <script type="text/javascript" src="css/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="row">
+        <div class="text-center">
+            <h1>Trivial Game</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="container">
+            <div class="btn-group btn-group-justified">
+                <a href="NewGame.php" class="btn btn-info">New game</a>
+                <a href="Ranks.php" class="btn btn-info">Ranks</a>
+                <div class="btn-group">
+                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                    MoreOptions <span class="caret"></span></button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><p class="dropdown-item"><?php $Name = $_COOKIE['Name']; echo" Hello $Name"?></p></li>
+                        <li><a href="edit.php">Change Password</a></li>
+                        <li><a href="LogOut.php">LogOut</a></li>
+                        <li class="divider"></li>
+                        <li><a href="DeleteUser.php">Delete User</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>    
+    </div>
