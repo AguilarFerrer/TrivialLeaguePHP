@@ -65,7 +65,7 @@
                 <input  name="Pass" type="password" class="form-control"value="<?php if(isset($_POST['Pass'])){ echo $_POST['Pass'];}?>"/><br><br>
             </div>
         </div>
-        <input type="submit" class="btn btn-success center-block" value="Submit">  
+        <input type="submit" class="btn btn-success center-block" value="Login">  
         
         <?php
             //If the user miss one time the password or user, this link will appear to change the password.
