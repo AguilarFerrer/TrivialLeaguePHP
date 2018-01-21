@@ -26,8 +26,10 @@ th, td { padding: 15px; }
 ?>
 <aside>
 <?php
+    //This query will get up to 20 ranks ordered form the higest puntuation.
     $q = "SELECT Name, Correct, Points FROM Ranks AS R INNER JOIN Users AS S ON S.UserID = R.RankID ORDER BY Points DESC LIMIT 20";
     $r = @mysqli_query ($dbc, $q);
+    //Crated the table for Global ranks.
     $txt= '<table class="table table-hover text-centered"><tr><th>Position</th><th>Name</th><th>Points</th><th>Correct Questions</th>';
     $row= mysqli_fetch_row($r);
     $int=1;
@@ -41,19 +43,20 @@ th, td { padding: 15px; }
         $row = mysqli_fetch_row($r);
         $int++;
     }
+    //Print the table.
     echo '
             <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h1>Global Ranking</h1> 
-                
-        ';
-                
+                    <h1>Global Ranking</h1>';          
     echo $txt . '</table></div>';
     
+    //Now using the player ID will get his top 20 ranking puntuations.
     $cookie = $_COOKIE['ID'];
+    //this gets the user puntuation.
     $u = "SELECT Name, Correct, Points FROM Ranks AS R INNER JOIN Users AS S ON S.UserID = R.RankID WHERE UserID=$cookie ORDER BY Points DESC LIMIT 20";
     $r = @mysqli_query ($dbc, $u);
+    //Now is generated the table for User ranks.
     $txt= '<table class="table table-hover text-centered"><tr><th>Name</th><th>Points<th>Correct Questions</th>';
     $row= mysqli_fetch_row($r);
     $int=1;
@@ -68,6 +71,7 @@ th, td { padding: 15px; }
         $row = mysqli_fetch_row($r);
         $int++;
     }
+    //Printed the table.
     echo '</div><div class="col-md-6">
     <h1>My Records</h1>';
     echo $txt . '</table></div>
